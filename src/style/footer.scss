@@ -1,0 +1,28 @@
+.footer{
+  padding: 30px;
+  background: red;
+
+  &__row{
+    display: flex;
+    align-items: end;
+  }
+  &__left{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+  &__card{
+    background: white;
+    padding: 15px 20px;
+    font-size: 40px;
+    color: red;
+    font-weight: 500;
+
+  }
+  &__title{
+    font-size: 38px;
+    margin-left: 20px;
+    color: white;
+    font-weight: 600;
+  }
+}
