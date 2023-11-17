@@ -1,0 +1,154 @@
+.add{
+  padding: 30px 0 40px;
+
+  &__subchapter{
+
+    &-desc{
+      display: none;
+      align-items: center;
+      column-gap: 5px;
+      margin-top: 10px;
+      color: #000;
+      font-size: 20px;
+      font-weight: 500;
+
+      &.active{
+        display: flex;
+        justify-content: center;
+      }
+
+      &__item{
+        border: 1px solid red;
+        padding: 15px 25px;
+        border-radius: 50px;
+
+
+        &.selectedSub{
+          background: red;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__images{
+    background: red;
+    padding:40px 20px;
+    width: 30%;
+    border-radius: 15px;
+    text-align: center;
+    margin: 0 auto;
+
+    &-title{
+      color: white;
+      font-weight: 500;
+      font-size: 24px;
+    }
+    &-input{
+      color: white;
+      font-weight: 500;
+      font-size: 13px;
+      margin: 20px 0 15px;
+
+    }
+    &-button{
+      padding: 7px 50px;
+      border-radius: 15px;
+      background: transparent;
+      border: 3px solid white;
+      color: white;
+      font-weight: 600;
+      font-size: 17px;
+
+      &:hover{
+        background: white;
+        color: red;
+      }
+    }
+  }
+
+  &__form{
+  text-align: center;
+
+    &-subchapters{
+    display: none;
+
+      &.active{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 15px;
+      }
+    }
+
+    &-title{
+      color: red;
+      font-weight: 500;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    &-input{
+      width: 200px;
+      padding: 15px 10px 15px;
+      text-align: left;
+      border-radius: 20px;
+      border: 2px solid red;
+      color: black;
+      font-weight: 400;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+    &-inputDesc{
+      width: 500px;
+      padding: 20px 0 200px 20px;
+      border: 2px solid red;
+      font-family: 'Raleway', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+      color: #868686;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+    &-chapter{
+      margin: 20px 0 15px;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    &-submit{
+      padding: 20px 70px;
+      border-radius: 20px;
+      margin-top: 50px;
+      background: transparent;
+      border: 1px solid red;
+      font-size: 20px;
+      font-weight: 500;
+
+
+      &:hover{
+        background: red;
+        color: white;
+      }
+    }
+  }
+
+  &__subchapter{
+
+    &-item{
+      padding: 7px 15px;
+      border: 2px solid red;
+      border-radius: 20px;
+      font-weight: 400;
+      font-size: 18px;
+
+      &:hover{
+        color: red;
+      }
+
+      &.selected{
+        color: red;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -22,7 +23,6 @@ const Footer = () => {
                         NEWS
                     </h1>
                 </div>
-
             </div>
         </footer>
     );

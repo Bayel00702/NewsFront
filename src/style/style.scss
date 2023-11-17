@@ -10,10 +10,22 @@
   font-family: 'Oswald', sans-serif;
 }
 
+button{
+  border: none;
+}
+
+input{
+  outline: none;
+}
+
 .container{
-  max-width: 1220px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 @import "header";
 @import "footer";
+@import "news";
+@import "newsList";
+@import "login";
+@import "addArticle";

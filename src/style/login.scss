@@ -1,0 +1,70 @@
+.login{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background: red;
+  padding: 20px 40px;
+  border-radius: 10px;
+  width: 20%;
+
+
+  &__title{
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+
+    &-input{
+      background: transparent;
+      border: 1px solid #ffff;
+      padding: 10px 15px;
+      outline: none;
+      width: 100%;
+      border-radius: 20px;
+      color: white;
+      font-weight: 400;
+      font-size: 15px;
+
+      &::placeholder{
+        color: #fff;
+        font-weight: 500;
+        font-size: 13px;
+      }
+
+    }
+    &-btn{
+      padding: 10px 40px;
+      border-radius: 50px;
+      background: transparent;
+      font-size: 20px;
+      color: white;
+      border: 3px solid #ffffff;
+
+      &:hover{
+        background: #ffffff;
+        color: red;
+      }
+    }
+  }
+
+  &__label{
+    width: 100%;
+
+    &-title{
+      font-weight: 400;
+      font-size: 15px;
+      color: white;
+      margin-bottom: 10px;
+    }
+  }
+
+}

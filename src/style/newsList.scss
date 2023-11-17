@@ -1,0 +1,28 @@
+.list{
+  padding: 30px 0 25px;
+
+  &__row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  &__card{
+    width: calc(33.33333% - 16px);
+
+    &-img{
+      width: 300px;
+    }
+
+    &-desc{
+      font-weight: 500;
+      font-size: 15px;
+      color: #000;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
