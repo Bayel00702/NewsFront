@@ -2,13 +2,14 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
 
 export const getAllArticles = createAsyncThunk(
-    "orders/getAllOrders",
-    async (_,thunkAPI) => {
+    "articles/getAllArticles",
+    async ({filter},thunkAPI) => {
         try {
+            const filterQuery = filter.reduce((acc, rec ) => (acc+=`chapter=${rec}`) , "");
 
-            const res = await axios('/articles');
-
+            const res = await axios(`/articles?${filterQuery}`);
             return res.data
+
         }
         catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -21,8 +22,14 @@ const articlesSlice = createSlice({
     name: "articles",
     initialState: {
         data: [],
+        filter: [],
         isLoading: false,
         error: ''
+    },
+    reducers: {
+        changeChapter: (state,{payload}) => {
+            state.filter = payload
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -41,4 +48,6 @@ const articlesSlice = createSlice({
 });
 
 
+
+export const {changeChapter} = articlesSlice.actions
 export default articlesSlice.reducer

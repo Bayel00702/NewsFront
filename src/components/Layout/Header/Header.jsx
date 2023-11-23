@@ -26,9 +26,9 @@ const Header = () => {
                                 T
                             </div>
                         </Link>
-                        <h1 className="header__title">
+                        <Link to='/' className="header__title">
                             NEWS
-                        </h1>
+                        </Link>
                     </div>
                     <ul className="header__list">
 

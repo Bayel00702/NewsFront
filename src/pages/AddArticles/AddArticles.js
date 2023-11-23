@@ -26,7 +26,7 @@ const AddArticles = () => {
 
 
     const onSubmit = (data) => {
-        axios.post('/article', { ...data, ...articleEl, image: gettedImageUrl, category: selectedChapter, subcategory: selectedSubchapter })
+        axios.post('/article', { ...data, ...articleEl, image: gettedImageUrl, chapter: selectedChapter, subchapter: selectedSubchapter })
                 .then((res) => {
                     dispatch(article(res.data));
                     navigate('/');
@@ -100,21 +100,67 @@ const AddArticles = () => {
                             type="text"
                             className="add__form-input"
                             placeholder='Напишите название своей статьи'
-                            {...register('title')}
+                            {...register('title', {
+                                    required: {
+                                        message: 'Обязательно к заполнению',
+                                        value: true
+                                    }
+                                }
+
+                            )}
                             id="title"
                         />
+                        <p className="add__form-err">{errors.title && errors.title?.message}</p>
                     </label>
 
                     <label htmlFor="description" className="add__form-label">
-                        <h3 className="add__form-title">Description</h3>
+                        <h3 className="add__form-title">First Description</h3>
                         <textarea
-                            type="text"
                             className="add__form-inputDesc"
                             placeholder='Напишите описание своей статьи'
-                            {...register('description')}
-                            id="description" // Добавим id для связи с htmlFor
+                            {...register('description1', {
+                                    required: {
+                                        message: 'Обязательно к заполнению',
+                                        value: true
+                                    }
+                                }
+
+                            )}
+                            id="description"
                         />
+                        <p className="add__form-err">{errors.description1 && errors.description1?.message}</p>
+
                     </label>
+
+                    <label htmlFor="description" className="add__form-label">
+                        <h3 className="add__form-title">Second description</h3>
+                        <textarea
+                            className="add__form-inputDesc"
+                            placeholder='Напишите описание своей статьи'
+                            {...register('description2', {
+                                    required: {
+                                        message: 'Обязательно к заполнению',
+                                        value: true
+                                    }
+                                }
+                            )}
+                            id="description"
+                        />
+                        <p className="add__form-err">{errors.description2 && errors.description2?.message}</p>
+
+                    </label>
+
+                    <label htmlFor="description" className="add__form-label">
+                        <h3 className="add__form-title">Third description</h3>
+                        <textarea
+                            className="add__form-inputDesc"
+                            placeholder='Напишите описание своей статьи'
+                            {...register('description3')}
+                            id="description"
+                        />
+
+                    </label>
+
 
                     <label htmlFor="" className="add__form-label">
                         <h3 className="add__form-title">Chapter</h3>
