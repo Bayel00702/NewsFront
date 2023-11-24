@@ -30,7 +30,6 @@ const AddArticles = () => {
                 .then((res) => {
                     dispatch(article(res.data));
                     navigate('/');
-                    console.log(data);
                 })
                 .catch((err) => console.log(err));
 
@@ -155,9 +154,17 @@ const AddArticles = () => {
                         <textarea
                             className="add__form-inputDesc"
                             placeholder='Напишите описание своей статьи'
-                            {...register('description3')}
+                            {...register('description3', {
+                                    required: {
+                                        message: 'Обязательно к заполнению',
+                                        value: true
+                                    }
+                                }
+
+                            )}
                             id="description"
                         />
+                        <p className="add__form-err">{errors.description3 && errors.description3?.message}</p>
 
                     </label>
 
@@ -184,8 +191,8 @@ const AddArticles = () => {
                                            if (setSubChapter) {
                                                setSubChapter((prev) => !prev)
                                            }
-                                           setSelectedChapter(item.name);
                                            dispatch(getSubChapter(item._id))
+                                           setSelectedChapter(item.name);
                                        }}
                                        key={item._id}
                                     >{item.name}</p>

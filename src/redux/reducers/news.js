@@ -1,9 +1,10 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
+import subChapter from "./subChapter";
 
 export const getAllArticles = createAsyncThunk(
     "articles/getAllArticles",
-    async ({filter},thunkAPI) => {
+    async ({filter,subchapterFilter},thunkAPI) => {
         try {
             const filterQuery = filter.reduce((acc, rec ) => (acc+=`chapter=${rec}`) , "");
 
@@ -23,6 +24,7 @@ const articlesSlice = createSlice({
     initialState: {
         data: [],
         filter: [],
+        subcategoryFilter: [],
         isLoading: false,
         error: ''
     },

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Image from '../../../../assets/news.jpg'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllChapter} from "../../../../redux/reducers/chapter";
 import {changeChapter, getAllArticles} from "../../../../redux/reducers/news";
+import {getSubChapter} from "../../../../redux/reducers/subChapter";
 
 const GeneralNews = () => {
 
@@ -21,7 +21,6 @@ const GeneralNews = () => {
         } else {
             setChapters([name]);
         }
-
     };
 
 
@@ -49,6 +48,7 @@ const GeneralNews = () => {
                                     key={item._id}
                                     className='news__top-active'
                                     onClick={() => {
+                                        dispatch(getSubChapter(item._id));
                                         handleChapterChange(item.name)
                                     }}
                                 >
@@ -61,7 +61,7 @@ const GeneralNews = () => {
                     <div className="news__row">
 
                         <div className="news__left">
-                            <img loading='lazy' src={randomObject && randomObject.image} alt="Palestine and Israile" className="news__img"/>
+                            <img loading='lazy' src={randomObject && randomObject.image} alt={randomObject && randomObject.title} className="news__img"/>
                         </div>
                         <div className="news__right">
                             <Link to={`/article/${randomObject && randomObject._id}`} className="news__title">{randomObject && randomObject.title}</Link>

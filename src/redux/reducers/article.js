@@ -21,7 +21,11 @@ const articleSlice = createSlice({
         status: '',
         error: ''
     },
-    reducers: {},
+    reducers: {
+        setImage: (state, action) => {
+            state.article = action.payload
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(getOneArticle.pending, state => {
@@ -39,4 +43,5 @@ const articleSlice = createSlice({
     }
 });
 
+export const {setImage} = articleSlice.actions
 export default articleSlice.reducer
