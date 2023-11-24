@@ -7,7 +7,6 @@ import chapter from "./reducers/chapter";
 import subchapter from "./reducers/subChapter";
 import defaultArticle from "./reducers/defaultArticle";
 import resetImage from "./reducers/resetImage";
-import changeSubChapter from "./reducers/changeSubchapters";
 
 
 
@@ -22,7 +21,6 @@ const store = configureStore({
         subchapter,
         defaultArticle,
         resetImage,
-        changeSubChapter,
     }),
     enhancers: [rememberEnhancer(window.localStorage, rememberedKeys,{persistWholeStore: true})]
 });
